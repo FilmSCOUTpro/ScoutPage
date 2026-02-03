@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting Redefined | FilmSCOUTpro</title>
+    <style>
+        :root {
+            /* Updated to match the exact homepage button blue */
+            --fsp-blue: #4a90e2; 
+            --fsp-bg: #000000; 
+            --fsp-card-border: rgba(255, 255, 255, 0.1);
+            --fsp-text-main: #1d1d1f;
+            --fsp-text-sub: #636366;
+            --fsp-white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--fsp-bg);
+            color: white;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav-header { 
+            padding: 50px 60px 0 60px; 
+            text-align: left;
+        }
+        
+        .logo-img { 
+            width: 240px;
+            height: auto;
+            display: block;
+        }
+
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 40px 20px 40px; 
+        }
+
+        .header-section { 
+            text-align: center; 
+            margin-top: 40px;
+            margin-bottom: 50px; 
+        }
+
+        .header-section h1 {
+            font-size: clamp(3rem, 10vw, 5.1rem); 
+            font-weight: 900; 
+            letter-spacing: -0.05em; 
+            color: white;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+            gap: 50px; 
+            margin-bottom: 80px; 
+        }
+
+        .card {
+            background: var(--fsp-white); 
+            border-radius: 24px;
+            padding: 35px;
+            display: flex; 
+            flex-direction: column;
+            border: 1px solid var(--fsp-card-border);
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.03);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            color: var(--fsp-text-main);
+        }
+
+        .card:hover { transform: translateY(-8px); }
+
+        .partner-icon { width: 40px; height: 40px; margin-bottom: 18px; object-fit: contain; align-self: flex-start;}
+
+        .card h3 { 
+            margin: 0 0 14px 0; font-size: 1.4rem; font-weight: 700; color: var(--fsp-text-main); text-align: left;
+        }
+        
+        .card p { 
+            color: var(--fsp-text-sub); line-height: 1.6; font-size: 0.95rem; margin-bottom: 28px; flex-grow: 1; text-align: left;
+        }
+
+        .btn-site {
+            background-color: var(--fsp-blue);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            width: fit-content;
+        }
+
+        .btn-site:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+
+        .footer-title { 
+            text-align: center; font-size: 2.55rem; font-weight: 900; margin-top: 40px; margin-bottom: 40px; color: white; letter-spacing: -0.03em;
+        }
+
+        .action-bar { 
+            background: var(--fsp-white); padding: 50px 40px; border-radius: 30px; text-align: center; width: 100%; box-sizing: border-box; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.03); margin-bottom: 96px; 
+        }
+
+        .button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+        .footer-btn {
+            background-color: var(--fsp-blue);
+            color: white;
+            text-decoration: none;
+            padding: 14px 0;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1rem;
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            transition: all 0.2s ease;
+            border: none;
+            display: inline-block;
+        }
+
+        .footer-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .footer-asset-wrap {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 0; 
+            line-height: 0;   
+            background: #000;
+            overflow: hidden;
+        }
+
+        .final-footer-image {
+            width: 100%;
+            max-width: 840px; 
+            height: auto;
+            display: inline-block;
+            filter: brightness(1.6); 
+            opacity: 1;
+            vertical-align: bottom; 
+            clip-path: inset(1px 1px 1px 1px); 
+        }
+
+        @media (max-width: 768px) { 
+            .nav-header { padding: 30px 20px; text-align: center; }
+            .logo-img { margin: 0 auto; width: 200px; }
+            .header-section h1 { font-size: 3rem; }
+            .footer-title { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; gap: 30px; }
+            .button-group { flex-direction: column; align-items: center; }
+            .footer-btn { width: 100%; max-width: 100%; }
+            .action-bar { margin-bottom: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav-header">
+    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FSPColourWhiteLettersTaglineRight.png?updatedAt=1767379477303" alt="Film Scout Pro Logo" class="logo-img">
+</nav>
+
+<div class="container">
+    <header class="header-section">
+        <h1>Scouting. Redefined.</h1>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <img src="https://ik.imagekit.io/zmjtdg822h/DropboxLOGO.png?updatedAt=1770058939706" alt="Dropbox" class="partner-icon">
+            <h3>Pro Presentation Tools</h3>
+            <p>Stop wasting time scouting locations. We provide customized, high quality galleries shot with a filmmaker's eye so you only have the pictures you need. Our custom upload process is <strong>Dropbox integrated</strong> making it effortless to build your next designer / director presentation.</p>
+            <a class="btn-site">Learn More</a>
+        </div>
+
+        <div class="card">
+            <img src="https://ik.imagekit.io/zmjtdg822h/GoogleMapsLOGO.png?updatedAt=1770058939714" alt="Google Maps" class="partner-icon">
+            <h3>Advanced Map Search</h3>
+            <p>Find the perfect spot using our high-powered search tools. Navigate your market with an interactive Google Maps interface that features smooth zooming and selectable property pins. You can filter by the Studio Zone or switch to satellite view to plan your equipment placement and logistics.</p>
+            <a href="https://filmscoutpro.ca/search-property" target="_blank" class="btn-site">Open Search</a>
+        </div>
+
+        <div class="card">
+            <img src="https://ik.imagekit.io/zmjtdg822h/VerifiedLOGO.png?updatedAt=1770058940138" alt="Verified" class="partner-icon">
+            <h3>Real-Time Availability</h3>
+            <p>Stop chasing dead leads and outdated contact info. We use a versatile service model that makes it easy for our property owners to keep their calendars current, rewarding them for staying engaged with the platform. Just look for the Green "Verified" Badge to know a spot is ready to go.</p>
+            <a class="btn-site">Learn More</a>
+        </div>
+
+        <div class="card">
+            <span style="font-size: 2.2rem; margin-bottom: 18px;">⏱️</span>
+            <h3>Scouting, On-Demand</h3>
+            <p>Need a tech survey by tomorrow? No problem. We built this platform for the "need it yesterday" reality of professional production. When you have zero time, our office has your back with a direct line to our management team to get your shoot moving fast.</p>
+            <a href="mailto:Admin@filmscoutpro.ca" class="btn-site">Email Admin</a>
+        </div>
+    </div>
+
+    <div class="footer-title">Ready to Roll?</div>
+    
+    <div class="action-bar">
+        <div class="button-group">
+            <a href="https://filmscoutpro.ca/" target="_blank" class="footer-btn">Featured Listings</a>
+            <a href="https://filmscoutpro.ca/search-property" target="_blank" class="footer-btn">Advanced Search Map</a>
+            <a href="#" class="footer-btn">Scout Dashboard</a>
+        </div>
+    </div>
+
+    <div class="footer-asset-wrap">
+        <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/Asset%2012@2x-100.jpg" alt="FilmSCOUTpro Footer" class="final-footer-image">
+    </div>
+</div>
+
+</body>
+</html>
