@@ -6,12 +6,12 @@
     <title>Scouting Redefined | FilmSCOUTpro</title>
     <style>
         :root {
-            /* Updated to match the exact homepage button blue */
             --fsp-blue: #4a90e2; 
+            --dropbox-blue: #0061ff; 
             --fsp-bg: #000000; 
             --fsp-card-border: rgba(255, 255, 255, 0.1);
             --fsp-text-main: #1d1d1f;
-            --fsp-text-sub: #636366;
+            --fsp-text-sub: #6e6e73; 
             --fsp-white: #ffffff;
         }
 
@@ -25,15 +25,14 @@
         }
 
         .nav-header { 
-            padding: 50px 60px 0 60px; 
-            text-align: left;
+            padding: 25px 60px 0 60px; 
+            display: flex;
+            justify-content: flex-start; 
+            width: 100%;
+            box-sizing: border-box;
         }
         
-        .logo-img { 
-            width: 240px;
-            height: auto;
-            display: block;
-        }
+        .logo-img { width: 280px; height: auto; display: block; }
 
         .container { 
             max-width: 1100px; 
@@ -43,8 +42,8 @@
 
         .header-section { 
             text-align: center; 
-            margin-top: 40px;
-            margin-bottom: 50px; 
+            margin-top: 15px; 
+            margin-bottom: 40px; 
         }
 
         .header-section h1 {
@@ -60,7 +59,7 @@
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
             gap: 50px; 
-            margin-bottom: 80px; 
+            margin-bottom: 60px; 
         }
 
         .card {
@@ -70,21 +69,24 @@
             display: flex; 
             flex-direction: column;
             border: 1px solid var(--fsp-card-border);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             color: var(--fsp-text-main);
         }
 
         .card:hover { transform: translateY(-8px); }
-
         .partner-icon { width: 40px; height: 40px; margin-bottom: 18px; object-fit: contain; align-self: flex-start;}
-
-        .card h3 { 
-            margin: 0 0 14px 0; font-size: 1.4rem; font-weight: 700; color: var(--fsp-text-main); text-align: left;
-        }
+        .card h3 { margin: 0 0 14px 0; font-size: 1.4rem; font-weight: 700; color: var(--fsp-text-main); text-align: left; }
         
         .card p { 
-            color: var(--fsp-text-sub); line-height: 1.6; font-size: 0.95rem; margin-bottom: 28px; flex-grow: 1; text-align: left;
+            color: var(--fsp-text-sub); 
+            line-height: 1.6; 
+            font-size: 0.95rem; 
+            margin-bottom: 28px; 
+            flex-grow: 1; 
+            text-align: left;
+            letter-spacing: 0.01em;
+            font-weight: 400;
         }
 
         .btn-site {
@@ -104,21 +106,13 @@
             width: fit-content;
         }
 
-        .btn-site:hover {
-            opacity: 0.85;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
-        }
+        .btn-site:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); }
 
-        .footer-title { 
-            text-align: center; font-size: 2.55rem; font-weight: 900; margin-top: 40px; margin-bottom: 40px; color: white; letter-spacing: -0.03em;
-        }
+        .footer-title { text-align: center; font-size: 2.55rem; font-weight: 900; margin-top: 10px; margin-bottom: 30px; color: white; letter-spacing: -0.03em; }
 
-        .action-bar { 
-            background: var(--fsp-white); padding: 50px 40px; border-radius: 30px; text-align: center; width: 100%; box-sizing: border-box; box-shadow: 0 10px 40px rgba(255, 255, 255, 0.03); margin-bottom: 96px; 
-        }
+        .action-bar { background: var(--fsp-white); padding: 50px 40px; border-radius: 30px; text-align: center; width: 100%; box-sizing: border-box; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-bottom: 80px; }
 
-        .button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; }
 
         .footer-btn {
             background-color: var(--fsp-blue);
@@ -129,55 +123,42 @@
             font-weight: 700;
             font-size: 1rem;
             flex: 1;
-            min-width: 200px;
-            max-width: 280px;
             transition: all 0.2s ease;
             border: none;
             display: inline-block;
-        }
-
-        .footer-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
-        }
-
-        .footer-asset-wrap {
             text-align: center;
-            width: 100%;
-            margin-bottom: 0; 
-            line-height: 0;   
-            background: #000;
-            overflow: hidden;
         }
+
+        .footer-btn:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); }
+
+        .footer-asset-wrap { text-align: center; width: 100%; margin-bottom: 0; line-height: 0; background: #000; overflow: hidden; position: relative; display: flex; justify-content: center; }
 
         .final-footer-image {
-            width: 100%;
-            max-width: 840px; 
-            height: auto;
-            display: inline-block;
-            filter: brightness(1.6); 
-            opacity: 1;
-            vertical-align: bottom; 
-            clip-path: inset(1px 1px 1px 1px); 
+            width: 100%; max-width: 840px; height: auto; display: inline-block; filter: brightness(1.6); vertical-align: bottom; 
+            clip-path: inset(2px 2px 2px 2px); box-shadow: 0 0 5px 5px #000; background: #000;
         }
 
-        @media (max-width: 768px) { 
-            .nav-header { padding: 30px 20px; text-align: center; }
-            .logo-img { margin: 0 auto; width: 200px; }
+        .footer-mailto-overlay { position: absolute; bottom: 20%; width: 450px; height: 300px; cursor: pointer; z-index: 10; }
+
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(8px); }
+        .modal-content { background-color: white; margin: 8vh auto; padding: 50px 40px; border-radius: 40px; max-width: 700px; width: 85%; position: relative; max-height: 80vh; overflow-y: auto; color: var(--fsp-text-main); }
+        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; }
+
+        @media (max-width: 950px) {
+            .nav-header { padding: 30px 20px; justify-content: center; }
+            .logo-img { width: 240px; }
             .header-section h1 { font-size: 3rem; }
             .footer-title { font-size: 1.8rem; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .button-group { flex-direction: column; align-items: center; }
             .footer-btn { width: 100%; max-width: 100%; }
-            .action-bar { margin-bottom: 60px; }
         }
     </style>
 </head>
 <body>
 
 <nav class="nav-header">
-    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FSPColourWhiteLettersTaglineRight.png?updatedAt=1767379477303" alt="Film Scout Pro Logo" class="logo-img">
+    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FSPColourWhiteLettersTaglineRight.png" alt="Film Scout Pro Logo" class="logo-img">
 </nav>
 
 <div class="container">
@@ -188,9 +169,9 @@
     <div class="grid">
         <div class="card">
             <img src="https://ik.imagekit.io/zmjtdg822h/DropboxLOGO.png?updatedAt=1770058939706" alt="Dropbox" class="partner-icon">
-            <h3>Pro Presentation Tools</h3>
-            <p>Stop wasting time scouting locations. We provide customized, high quality galleries shot with a filmmaker's eye so you only have the pictures you need. Our custom upload process is <strong>Dropbox integrated</strong> making it effortless to build your next designer / director presentation.</p>
-            <a class="btn-site">Learn More</a>
+            <h3>Pro Scout Tools</h3>
+            <p>Sync curated galleries directly to <strong>Dropbox</strong> or export as <strong>PDF decks</strong> for seamless team collaboration. Each gallery includes overhead aerial mapping to assist with logistical site planning. Build picture presentations with a platform built for speed.</p>
+            <button class="btn-site" onclick="openModal('scoutTools')">Learn More</button>
         </div>
 
         <div class="card">
@@ -204,18 +185,18 @@
             <img src="https://ik.imagekit.io/zmjtdg822h/VerifiedLOGO.png?updatedAt=1770058940138" alt="Verified" class="partner-icon">
             <h3>Real-Time Availability</h3>
             <p>Stop chasing dead leads and outdated contact info. We use a versatile service model that makes it easy for our property owners to keep their calendars current, rewarding them for staying engaged with the platform. Just look for the Green "Verified" Badge to know a spot is ready to go.</p>
-            <a class="btn-site">Learn More</a>
+            <button class="btn-site" onclick="openModal('realTime')">Learn More</button>
         </div>
 
         <div class="card">
-            <span style="font-size: 2.2rem; margin-bottom: 18px;">⏱️</span>
-            <h3>Scouting, On-Demand</h3>
-            <p>Need a tech survey by tomorrow? No problem. We built this platform for the "need it yesterday" reality of professional production. When you have zero time, our office has your back with a direct line to our management team to get your shoot moving fast.</p>
-            <a href="mailto:Admin@filmscoutpro.ca" class="btn-site">Email Admin</a>
+            <span style="font-size: 2.2rem; margin-bottom: 18px;">📷</span>
+            <h3>Presentation-Ready Pics</h3>
+            <p>Save yourself the drive. Unlike other platforms, we provide high-quality galleries specifically shot with a filmmaker's eye to help you cut down on physical scouting. By capturing the details that actually matter, we make it easy to ensure you have every angle needed by the creative decision-makers.</p>
+            <button class="btn-site" onclick="openModal('presentation')">View Samples</button>
         </div>
     </div>
 
-    <div class="footer-title">Ready to Roll?</div>
+    <div class="footer-title">Find Your Frame.</div>
     
     <div class="action-bar">
         <div class="button-group">
@@ -226,9 +207,57 @@
     </div>
 
     <div class="footer-asset-wrap">
+        <a href="mailto:info@filmscoutpro.ca?subject=FilmSCOUTpro%20-%20Contact%20Us%20Today%20-%20General%20Inquiry!" target="_blank" class="footer-mailto-overlay"></a>
         <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/Asset%2012@2x-100.jpg" alt="FilmSCOUTpro Footer" class="final-footer-image">
     </div>
 </div>
+
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalHeaderContent"></div>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+    const modalData = {
+        scoutTools: { 
+            title: `<div style="text-align:center;"><h2 style="color:var(--dropbox-blue); font-size:2.8rem; font-weight:900; margin:0; letter-spacing:-0.03em;">Pro Scout Tools</h2><h3 style="font-size:0.9rem; color:var(--fsp-text-sub); text-transform:uppercase; letter-spacing:0.1em; margin-top:10px;">The New Standard in Digital Scouting Logistics</h3></div>`, 
+            body: `<div style="font-size:1.15rem; line-height:1.8; color:var(--fsp-text-main); margin-top:30px;">
+                    <p style="margin-bottom:25px;"><strong>FilmSCOUTpro isn't just a database—It's a productivity engine.</strong> We’ve streamlined the process by integrating industry-standard tools, making your workflow faster than ever.</p>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:20px;"><strong>• Integrated Dropbox Technology:</strong> We cut out the extra steps. Now you can Sync location photo files directly to your production Dropbox folder—saving you valuable time.</li>
+                        <li style="margin-bottom:20px;"><strong>• Downloadable PDF File:</strong> Every listing contains a downloadable PDF perfect for your presentations. Every file contains the listing's high-resolution photos, property data, and an overhead aerial mapping photo to assist with logistical planning.</li>
+                    </ul>
+                  </div>` 
+        },
+        realTime: {
+            title: `<div style="text-align:center;"><h2 style="color:var(--fsp-blue); font-size:2.8rem; font-weight:900; margin:0; letter-spacing:-0.03em;">Real-Time Updates</h2><h3 style="font-size:0.9rem; color:var(--fsp-text-sub); text-transform:uppercase; letter-spacing:0.1em; margin-top:10px;">Reliability Built on Engagement</h3></div>`,
+            body: `<div style="font-size:1.05rem; line-height:1.7; color:var(--fsp-text-main); margin-top:30px;">
+                    <p style="margin-bottom:20px;">The biggest waste of time in scouting is chasing a location that isn't actually available. Our proprietary ProHOST Rewards system ensures our hosts are incentivized to keep you informed.</p>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:15px;"><strong>• Verified Badge:</strong> Property owners who maintain 100% calendar accuracy earn the Green Verified Badge, signalling industry-leading reliability.</li>
+                        <li style="margin-bottom:15px;"><strong>• Active Incentives:</strong> Our hosts earn more when they stay engaged, ensuring your inquiries are prioritized and met with fast responses.</li>
+                    </ul>
+                  </div>`
+        },
+        presentation: {
+             title: `<div style="text-align:center;"><h2 style="color:var(--fsp-blue); font-size:2.8rem; font-weight:900; margin:0; letter-spacing:-0.03em;">Sample Galleries</h2><h3 style="font-size:0.9rem; color:var(--fsp-text-sub); text-transform:uppercase; letter-spacing:0.1em; margin-top:10px;">Shot with a Filmmaker's Eye</h3></div>`,
+             body: `<div style="font-size:1.05rem; line-height:1.7; color:var(--fsp-text-main); margin-top:30px; text-align:center;">
+                    <p>Gallery preview tools and sample downloads are currently being finalized for the production launch. Check back soon for full deck examples.</p>
+                  </div>`
+        }
+    };
+
+    function openModal(feature) { 
+        document.getElementById('modalHeaderContent').innerHTML = modalData[feature].title; 
+        document.getElementById('modalBody').innerHTML = modalData[feature].body; 
+        document.getElementById('infoModal').style.display = 'block'; 
+    }
+    function closeModal() { document.getElementById('infoModal').style.display = 'none'; }
+    window.onclick = function(event) { if (event.target == document.getElementById('infoModal')) { closeModal(); } }
+</script>
 
 </body>
 </html>
