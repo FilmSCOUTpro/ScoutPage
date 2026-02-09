@@ -7,9 +7,10 @@
     <style>
         :root {
             --fsp-blue: #4a90e2; 
+            --fsp-blue-hover: #2156a5; 
             --dropbox-blue: #0061ff; 
             --fsp-bg: #000000; 
-            --fsp-card-border: rgba(255, 255, 255, 0.1);
+            --fsp-card-border: rgba(255, 255, 255, 0.15);
             --fsp-text-main: #1d1d1f;
             --fsp-text-sub: #6e6e73; 
             --fsp-white: #ffffff;
@@ -65,18 +66,23 @@
 
         .card {
             background: var(--fsp-white); 
-            border-radius: 24px;
+            border-radius: 28px;
             padding: 35px;
             display: flex; 
             flex-direction: column;
             border: 1px solid var(--fsp-card-border);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: box-shadow 0.4s ease;
             color: var(--fsp-text-main);
         }
 
-        .card:hover { transform: translateY(-8px); }
-        .partner-icon { width: 40px; height: 40px; margin-bottom: 18px; object-fit: contain; align-self: flex-start;}
+        .card:hover { 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .partner-icon { height: 40px; width: auto; margin-bottom: 18px; object-fit: contain; align-self: flex-start;}
+        .icon-verified { height: 48px; margin-bottom: 10px; }
+
         .card h3 { margin: 0 0 14px 0; font-size: 1.4rem; font-weight: 700; color: var(--fsp-text-main); text-align: left; }
         
         .card p { 
@@ -101,17 +107,31 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer;
             border: none;
             width: fit-content;
         }
 
-        .btn-site:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3); }
+        .btn-site:hover { 
+            background-color: var(--fsp-blue-hover); 
+            transform: translateY(-4px); 
+            box-shadow: 0 6px 15px rgba(33, 86, 165, 0.4); 
+        }
 
         .footer-title { text-align: center; font-size: 2.55rem; font-weight: 900; margin-top: 10px; margin-bottom: 30px; color: white; letter-spacing: -0.03em; }
 
-        .action-bar { background: var(--fsp-white); padding: 50px 40px; border-radius: 30px; text-align: center; width: 100%; box-sizing: border-box; box-shadow: 0 20px 40px rgba(0,0,0,0.4); margin-bottom: 80px; }
+        .action-bar { 
+            background: var(--fsp-white); 
+            padding: 40px; 
+            border-radius: 40px; 
+            text-align: center; 
+            width: 100%; 
+            box-sizing: border-box; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            margin-bottom: 80px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
         .button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; }
 
@@ -124,13 +144,17 @@
             font-weight: 700;
             font-size: 1rem;
             flex: 1;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: none;
             display: inline-block;
             text-align: center;
         }
 
-        .footer-btn:hover { opacity: 0.9; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); }
+        .footer-btn:hover { 
+            background-color: var(--fsp-blue-hover); 
+            transform: translateY(-4px); 
+            box-shadow: 0 8px 20px rgba(33, 86, 165, 0.4); 
+        }
 
         .footer-asset-wrap { text-align: center; width: 100%; margin-bottom: 0; line-height: 0; background: #000; overflow: hidden; position: relative; display: flex; justify-content: center; }
 
@@ -141,8 +165,31 @@
 
         .footer-mailto-overlay { position: absolute; bottom: 20%; width: 450px; height: 300px; cursor: pointer; z-index: 10; }
 
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(8px); }
-        .modal-content { background-color: white; margin: 8vh auto; padding: 50px 40px; border-radius: 40px; max-width: 700px; width: 85%; position: relative; max-height: 80vh; overflow-y: auto; color: var(--fsp-text-main); }
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+            backdrop-filter: blur(10px); 
+            overflow-y: auto;
+        }
+        
+        .modal-content { 
+            background-color: white; 
+            margin: 50px auto; 
+            padding: 50px 40px; 
+            border-radius: 40px; 
+            max-width: 700px; 
+            width: calc(100% - 40px); 
+            position: relative; 
+            color: var(--fsp-text-main); 
+            box-sizing: border-box;
+        }
+
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; }
 
         @media (max-width: 950px) {
@@ -153,6 +200,8 @@
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .button-group { flex-direction: column; align-items: center; }
             .footer-btn { width: 100%; max-width: 100%; }
+            .action-bar { padding: 40px 25px; }
+            .modal-content { margin: 30px auto; padding: 40px 25px; width: calc(100% - 30px); }
         }
     </style>
 </head>
@@ -183,17 +232,17 @@
         </div>
 
         <div class="card">
-            <img src="https://ik.imagekit.io/zmjtdg822h/VerifiedLOGO.png?updatedAt=1770058940138" alt="Verified" class="partner-icon">
+            <img src="https://ik.imagekit.io/zmjtdg822h/VerifiedLOGO.png?updatedAt=1770058940138" alt="Verified" class="partner-icon icon-verified">
             <h3>Verified Properties</h3>
             <p>Stop chasing dead-end leads and outdated contact info. We use a custom-engineered verification system that makes it easy for our property owners to keep their availability current, rewarding them for staying engaged with the platform. Just look for the Green "Verified" Badge to know a spot is ready to go.</p>
             <button class="btn-site" onclick="openModal('realTime')">Learn More</button>
         </div>
 
         <div class="card">
-            <span style="font-size: 2.2rem; margin-bottom: 18px;">📷</span>
-            <h3>Presentation-Ready Pics</h3>
-            <p>Save yourself the drive. Unlike other platforms, we provide high-quality galleries specifically shot with a filmmaker's eye to help you cut down on physical scouting. By capturing the details that actually matter, we make it easy to ensure you have every angle needed by the creative decision-makers.</p>
-            <button class="btn-site" onclick="openModal('presentation')">View Samples</button>
+            <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/IconFullColour.png?updatedAt=1767379573424" alt="The Pro Network" class="partner-icon">
+            <h3>The Pro Network</h3>
+            <p>FilmSCOUTpro is a specialized marketplace designed to unite the film and property industries—an expert resource custom-built for the dedicated professionals of the fast-paced film industry. We have streamlined the scouting process to seamlessly connect top industry professionals with high-caliber, vetted locations.</p>
+            <a href="https://filmscoutpro.ca/" target="_blank" class="btn-site">View Featured Listings</a>
         </div>
     </div>
 
@@ -201,8 +250,8 @@
     
     <div class="action-bar">
         <div class="button-group">
-            <a href="https://filmscoutpro.ca/" target="_blank" class="footer-btn">Featured Listings</a>
-            <a href="https://filmscoutpro.ca/search-property" target="_blank" class="footer-btn">Advanced Search Map</a>
+            <a href="https://filmscoutpro.ca/" target="_blank" class="footer-btn">Return Home</a>
+            <a href="https://filmscoutpro.ca/search-property" target="_blank" class="footer-btn">Advanced Search</a>
             <a href="#" class="footer-btn">Scout Dashboard</a>
         </div>
     </div>
@@ -241,12 +290,6 @@
                         <li style="margin-bottom:20px;"><strong>• Active Owners:</strong> The Green Badge tells you the host is engaged with the platform and waiting for your request.</li>
                         <li style="margin-bottom:20px;"><strong>• Reliable Scouting:</strong> By incentivizing our best hosts, we ensure the inventory you see is the most reliable in the market.</li>
                     </ul>
-                  </div>`
-        },
-        presentation: {
-             title: `<div style="text-align:center;"><h2 style="color:var(--fsp-blue); font-size:2.8rem; font-weight:900; margin:0; letter-spacing:-0.03em;">Sample Galleries</h2><h3 style="font-size:0.9rem; color:var(--fsp-text-sub); text-transform:uppercase; letter-spacing:0.1em; margin-top:10px;">Shot with a Filmmaker's Eye</h3></div>`,
-             body: `<div style="font-size:1.05rem; line-height:1.7; color:var(--fsp-text-main); margin-top:30px; text-align:center;">
-                    <p>Gallery preview tools and sample downloads are currently being finalized for the production launch. Check back soon for full deck examples.</p>
                   </div>`
         }
     };
