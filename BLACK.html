@@ -26,15 +26,25 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .nav-header { 
-            padding: 25px 60px 0 60px; 
-            display: flex;
-            justify-content: flex-start; 
+        /* --- RESPONSIVE HEADER SYSTEM (SURGICAL SWAP) --- */
+        .site-header-placeholder {
             width: 100%;
-            box-sizing: border-box;
+            line-height: 0;
+            text-align: center;
+            background-color: #000;
         }
-        
-        .logo-img { width: 280px; height: auto; display: block; }
+
+        .header-img-desktop {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header-img-mobile {
+            display: none; 
+            width: 100%;
+            height: auto;
+        }
 
         .container { 
             max-width: 1100px; 
@@ -178,8 +188,8 @@
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; }
 
         @media (max-width: 950px) {
-            .nav-header { padding: 30px 20px; justify-content: center; }
-            .logo-img { width: 240px; }
+            .header-img-desktop { display: none; }
+            .header-img-mobile { display: block; }
             .white-frame { padding: 40px 25px; border-radius: 40px; text-align: center; }
             .white-frame h1 { font-size: 3rem; margin-bottom: 20px; }
             .card { border-radius: 40px; padding: 35px; }
@@ -201,9 +211,10 @@
 </head>
 <body>
 
-<nav class="nav-header">
-    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FSPColourWhiteLettersTaglineRight.png" alt="Film Scout Pro Logo" class="logo-img">
-</nav>
+<header class="site-header-placeholder">
+    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/Screenshot%202026-02-16%20at%206.15.46%E2%80%AFAM.png?updatedAt=1771240602097" class="header-img-desktop" alt="Nav Desktop">
+    <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/Screenshot%202026-02-16%20at%206.18.06%E2%80%AFAM.png?updatedAt=1771240692085" class="header-img-mobile" alt="Nav Mobile">
+</header>
 
 <div class="container">
     <div class="white-frame">
@@ -211,7 +222,7 @@
         <p class="contained-subheader">A new standard in film location scouting.</p>
         <div class="divider"></div>
         <p class="info-para">
-            We created this platform to streamline the scouting process and meet the demanding pace of the film industry. FilmSCOUTpro is the answer to the outdated systems that waste your time with dead-end leads. By removing the unnecessary steps, we’ve cleared the path so you can <strong>find your frame.</strong>
+            We created this platform to streamline the scouting process and meet the demanding pace of the film industry. FilmSCOUTpro is the answer to the outdated systems that waste your time with dead-end leads. By removing all the unnecessary steps, we’ve cleared the path so you can <strong>find your frame.</strong>
         </p>
     </div>
 
