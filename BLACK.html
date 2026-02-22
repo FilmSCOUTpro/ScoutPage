@@ -26,7 +26,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- RESPONSIVE HEADER SYSTEM (SURGICAL SWAP) --- */
+        /* --- RESPONSIVE HEADER --- */
         .site-header-placeholder {
             width: 100%;
             line-height: 0;
@@ -52,6 +52,7 @@
             padding: 0 40px 20px 40px; 
         }
 
+        /* TOP WHITE FRAME SECTION */
         .white-frame {
             background-color: var(--fsp-white);
             border-radius: 50px;
@@ -111,55 +112,109 @@
             color: var(--fsp-text-main);
         }
 
-        .card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+        .card:hover { 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
 
         .partner-icon { height: 40px; width: auto; margin-bottom: 18px; object-fit: contain; align-self: flex-start;}
         .icon-verified { height: 48px; margin-bottom: 10px; }
+
         .card h3 { margin: 0 0 14px 0; font-size: 1.4rem; font-weight: 700; color: var(--fsp-text-main); text-align: left; }
-        .card p { color: var(--fsp-text-sub); line-height: 1.6; font-size: 0.95rem; margin-bottom: 28px; flex-grow: 1; text-align: left; letter-spacing: 0.01em; font-weight: 400; }
+        
+        .card p { 
+            color: var(--fsp-text-sub); 
+            line-height: 1.6; 
+            font-size: 0.95rem; 
+            margin-bottom: 28px; 
+            flex-grow: 1; 
+            text-align: left;
+            letter-spacing: 0.01em;
+            font-weight: 400;
+        }
 
         .btn-site {
-            background-color: var(--fsp-blue); color: white; text-decoration: none; padding: 12px 30px; border-radius: 100px;
-            font-weight: 600; font-size: 0.9rem; display: inline-flex; justify-content: center; align-items: center;
-            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; border: none; width: fit-content;
+            background-color: var(--fsp-blue);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: none;
+            width: fit-content;
         }
-        .btn-site:hover { background-color: var(--fsp-blue-hover); transform: translateY(-4px); box-shadow: 0 6px 15px rgba(33, 86, 165, 0.4); }
+
+        .btn-site:hover { 
+            background-color: var(--fsp-blue-hover); 
+            transform: translateY(-4px); 
+            box-shadow: 0 6px 15px rgba(33, 86, 165, 0.4); 
+        }
 
         .footer-title { text-align: center; font-size: 2.55rem; font-weight: 900; margin-top: 10px; margin-bottom: 30px; color: white; letter-spacing: -0.03em; }
 
         .action-bar { 
-            background: var(--fsp-white); padding: 40px; border-radius: 50px; text-align: center; width: 100%; box-sizing: border-box; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5); margin-bottom: 80px; border: 1px solid rgba(255,255,255,0.1); color: var(--fsp-text-main);
+            background: var(--fsp-white); 
+            padding: 40px; 
+            border-radius: 50px; 
+            text-align: center; 
+            width: 100%; 
+            box-sizing: border-box; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            margin-bottom: 80px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .button-group { display: flex; justify-content: center; gap: 20px; flex-wrap: nowrap; }
 
         .footer-btn {
-            background-color: var(--fsp-blue); color: white; text-decoration: none; padding: 14px 0; border-radius: 100px;
-            font-weight: 700; font-size: 1rem; flex: 1; transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1); border: none; display: inline-block; text-align: center;
+            background-color: var(--fsp-blue);
+            color: white;
+            text-decoration: none;
+            padding: 14px 0;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1rem;
+            flex: 1;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: none;
+            display: inline-block;
+            text-align: center;
         }
-        .footer-btn:hover { background-color: var(--fsp-blue-hover); transform: translateY(-4px); box-shadow: 0 8px 20px rgba(33, 86, 165, 0.4); }
 
-        /* --- WIDE PREMIUM FOOTER --- */
+        .footer-btn:hover { 
+            background-color: var(--fsp-blue-hover); 
+            transform: translateY(-4px); 
+            box-shadow: 0 8px 20px rgba(33, 86, 165, 0.4); 
+        }
+
+        /* --- THE MASTER FOOTER STYLES --- */
         .site-footer {
             background-color: #000;
             color: #fff;
-            padding: 140px 0 120px 0; 
-            border-top: none; 
+            padding: 120px 0; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         .footer-container {
-            max-width: 1200px; margin: 0 auto; padding: 0 40px;
-            display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
+            max-width: 1200px; 
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            box-sizing: border-box;
         }
 
-        .footer-brand-box { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
-        .footer-logo-img { width: 210px; height: auto; margin-bottom: 12px; }
+        .footer-brand-box { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; order: 1; }
+        .footer-logo-img { width: 230px; height: auto; }
         .footer-made-in { width: 220px; height: auto; opacity: 0.6; }
 
-        .footer-nav-box { flex: 1.2; display: flex; align-items: center; gap: 60px; justify-content: center; }
-        .footer-divider-thin { width: 1px; height: 140px; background-color: rgba(255, 255, 255, 0.15); }
+        .footer-nav-box { flex: 1.2; display: flex; align-items: center; gap: 60px; justify-content: center; order: 2; }
+        .footer-divider-thin { width: 1px; height: 130px; background-color: rgba(255, 255, 255, 0.15); }
         .footer-links { display: flex; flex-direction: column; gap: 16px; }
         .footer-link-item {
             color: #fff; text-decoration: none; font-size: 13px; font-weight: 800; 
@@ -168,44 +223,81 @@
         }
         .footer-link-item:hover { opacity: 0.5; transform: translateX(8px); }
 
-        .footer-action-box { flex: 1; display: flex; justify-content: flex-end; }
-        .action-stack { display: flex; flex-direction: column; align-items: center; width: 240px; gap: 0; margin-top: -15px; }
+        .footer-action-box { flex: 1; display: flex; justify-content: flex-end; order: 3; }
+        .action-stack { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        
+        .footer-learn-more-text { width: 261px; height: auto; margin-bottom: -12px; }
         .btn-wrap { display: block; line-height: 0; text-decoration: none; }
-        .footer-contact-btn { width: 240px; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .btn-wrap:hover .footer-contact-btn { transform: scale(1.08); }
-        .footer-social-row { display: flex; justify-content: center; gap: 15px; margin-top: -22px; position: relative; }
-        .footer-social-icon { width: 52px; height: auto; opacity: 0.9; transition: all 0.3s ease; }
-        .footer-social-icon:hover { opacity: 1; transform: translateY(-4px); }
+        .footer-contact-btn { width: 208px; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .btn-wrap:hover .footer-contact-btn { transform: scale(1.05); }
+        .footer-social-row { display: flex; justify-content: center; gap: 15px; margin-top: -22px; }
+        .footer-social-icon { width: 48px; height: auto; opacity: 0.9; transition: all 0.3s ease; }
+        .footer-social-icon:hover { transform: translateY(-4px); opacity: 1; }
 
         .modal { 
-            display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.8); backdrop-filter: blur(10px); overflow-y: auto;
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+            backdrop-filter: blur(10px); 
+            overflow-y: auto;
         }
+        
         .modal-content { 
-            background-color: white; margin: 50px auto; padding: 50px 40px; border-radius: 40px; 
-            max-width: 700px; width: calc(100% - 40px); position: relative; color: var(--fsp-text-main); box-sizing: border-box;
+            background-color: white; 
+            margin: 50px auto; 
+            padding: 50px 40px; 
+            border-radius: 40px; 
+            max-width: 700px; 
+            width: calc(100% - 40px); 
+            position: relative; 
+            color: var(--fsp-text-main); 
+            box-sizing: border-box;
         }
+
         .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; }
 
+        /* --- RESPONSIVE LOGIC --- */
         @media (max-width: 950px) {
             .header-img-desktop { display: none; }
             .header-img-mobile { display: block; }
             .white-frame { padding: 40px 25px; border-radius: 40px; text-align: center; }
             .white-frame h1 { font-size: 3rem; margin-bottom: 20px; }
+            
+            /* Centering the divider on mobile to match Host page */
+            .divider { margin: 0 auto 40px auto; }
+
             .card { border-radius: 40px; padding: 35px; }
             .action-bar { border-radius: 40px; padding: 40px 25px; }
             .footer-title { font-size: 1.8rem; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .button-group { flex-direction: column; align-items: center; }
             .footer-btn { width: 100%; max-width: 100%; }
-            .site-footer { padding: 80px 0 60px 0; }
-            .footer-container { flex-direction: column; gap: 60px; }
-            .footer-brand-box { align-items: center; }
+            .modal-content { margin: 30px auto; padding: 40px 25px; width: calc(100% - 30px); }
+
+            /* Mobile Stacking Order: Action -> TOC Links -> Branding */
+            .footer-container { flex-direction: column !important; gap: 60px !important; }
+            .footer-action-box { order: 1 !important; justify-content: center; width: 100%; }
+            .action-stack { gap: 0 !important; }
+            .footer-learn-more-text { width: 250px; margin-bottom: -10px !important; }
+            .footer-contact-btn { width: 195px; }
+            .footer-social-row { margin-top: -18px !important; }
+
+            .footer-nav-box { order: 2 !important; justify-content: center; width: 100%; }
             .footer-divider-thin { display: none; }
-            .footer-nav-box { gap: 0; }
-            .footer-action-box { justify-content: center; }
-            .action-stack { width: 100%; margin-top: 0; }
-            .footer-social-row { margin-top: -5px; }
+            .footer-links { 
+                align-items: flex-start; 
+                border-left: 1px solid rgba(255, 255, 255, 0.15); 
+                padding-left: 25px; 
+                width: fit-content; 
+                margin: 0 auto; 
+            }
+
+            .footer-brand-box { order: 3 !important; align-items: center; width: 100%; }
         }
     </style>
 </head>
@@ -222,7 +314,7 @@
         <p class="contained-subheader">A new standard in film location scouting.</p>
         <div class="divider"></div>
         <p class="info-para">
-            We created this platform to streamline the scouting process and meet the demanding pace of the film industry. FilmSCOUTpro is the answer to the outdated systems that waste your time with dead-end leads. By removing all the unnecessary steps, we’ve cleared the path so you can <strong>find your frame.</strong>
+            We developed this platform to meet the fast-paced demands of today's modern film industry. By providing a solution to the limitations of outdated platforms and traditional scouting, we’ve cleared the path so you can <strong>find your frame</strong>, faster than ever.
         </p>
     </div>
 
@@ -286,6 +378,7 @@
 
         <div class="footer-action-box">
             <div class="action-stack">
+                <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/Screenshot%202026-02-22%20at%203.27.03%E2%80%AFPM.png" alt="Want To Learn More?" class="footer-learn-more-text">
                 <a href="mailto:info@filmscoutpro.ca?subject=FilmSCOUTpro%20-%20Contact%20Us%20Today%20-%20General%20Inquiry!" target="_blank" class="btn-wrap">
                     <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/CONTACT-FOOTER.png" alt="Contact Us Today" class="footer-contact-btn">
                 </a>
