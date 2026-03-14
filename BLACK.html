@@ -191,75 +191,88 @@
             box-shadow: 0 8px 20px rgba(33, 86, 165, 0.4); 
         }
 
-        /* --- THE MASTER FOOTER STYLES --- */
+        /* --- MASTER PREMIUM FOOTER STYLES --- */
         .site-footer {
             background-color: #000;
             color: #fff;
-            padding: 120px 0; 
+            padding: 160px 0; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         .footer-container {
-            max-width: 1200px; 
+            max-width: 1350px; 
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 0 60px;
             display: flex;
             justify-content: space-between;
             align-items: center; 
             box-sizing: border-box;
         }
 
-        .footer-brand-box { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; order: 1; }
-        .footer-logo-img { width: 230px; height: auto; }
-        .footer-made-in { width: 220px; height: auto; opacity: 0.6; }
+        .footer-brand-box { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 15px; order: 1; }
+        .footer-logo-img { width: 210px; height: auto; } 
+        .footer-made-in { width: 240px; height: auto; opacity: 0.8; }
 
-        .footer-nav-box { flex: 1.2; display: flex; align-items: center; gap: 60px; justify-content: center; order: 2; }
-        .footer-divider-thin { width: 1px; height: 130px; background-color: rgba(255, 255, 255, 0.15); }
-        .footer-links { display: flex; flex-direction: column; gap: 16px; }
+        .footer-nav-box { flex: 1.3; display: flex; align-items: center; gap: 70px; justify-content: center; order: 2; }
+        .footer-divider-thin { width: 1px; height: 140px; background-color: rgba(255, 255, 255, 0.15); }
+        
+        .footer-links { display: flex; flex-direction: column; gap: 18px; }
         .footer-link-item {
-            color: #fff; text-decoration: none; font-size: 13px; font-weight: 800; 
-            letter-spacing: 3.5px; text-transform: uppercase;
+            color: #fff; text-decoration: none; 
+            font-size: 12px; 
+            font-weight: 700; 
+            letter-spacing: 4px; 
+            text-transform: uppercase;
             transition: transform 0.3s ease, opacity 0.3s;
+            opacity: 0.85; 
         }
-        .footer-link-item:hover { opacity: 0.5; transform: translateX(8px); }
+        .footer-link-item:hover { opacity: 1; transform: translateX(8px); }
 
         .footer-action-box { flex: 1; display: flex; justify-content: flex-end; order: 3; }
         .action-stack { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        .footer-learn-more-text { width: 240px; height: auto; margin-bottom: -10px; }
         
-        .footer-learn-more-text { width: 261px; height: auto; margin-bottom: -12px; }
         .btn-wrap { display: block; line-height: 0; text-decoration: none; }
-        .footer-contact-btn { width: 208px; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .btn-wrap:hover .footer-contact-btn { transform: scale(1.05); }
-        .footer-social-row { display: flex; justify-content: center; gap: 15px; margin-top: -22px; }
-        .footer-social-icon { width: 48px; height: auto; opacity: 0.9; transition: all 0.3s ease; }
-        .footer-social-icon:hover { transform: translateY(-4px); opacity: 1; }
+        .footer-contact-btn { width: 195px; height: auto; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .footer-contact-btn:hover { transform: scale(1.07); }
 
+        .footer-social-row { display: flex; justify-content: center; gap: 18px; margin-top: -18px; }
+        .footer-social-icon { 
+            width: 44px; 
+            height: auto; 
+            opacity: 0.95; 
+            transition: transform 0.3s ease, opacity 0.3s; 
+        }
+        .footer-social-icon:hover { transform: translateY(-5px); opacity: 1; }
+
+        /* --- HARMONIZED MODAL STYLES --- */
         .modal { 
             display: none; 
             position: fixed; 
             z-index: 9999; 
-            left: 0; 
-            top: 0; 
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0,0,0,0.8); 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.85); 
             backdrop-filter: blur(10px); 
-            overflow-y: auto;
+            justify-content: center; 
+            align-items: center; /* PERFECT CENTERING LIKE HOST PAGE */
         }
         
         .modal-content { 
             background-color: white; 
-            margin: 50px auto; 
             padding: 50px 40px; 
             border-radius: 40px; 
             max-width: 700px; 
-            width: calc(100% - 40px); 
+            width: 90%; 
             position: relative; 
+            max-height: 85vh; 
+            overflow-y: auto; 
             color: var(--fsp-text-main); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5); 
             box-sizing: border-box;
         }
 
-        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; }
+        .close-btn { position: absolute; right: 25px; top: 20px; font-size: 32px; cursor: pointer; color: #000; z-index: 10; }
 
         /* --- RESPONSIVE LOGIC --- */
         @media (max-width: 950px) {
@@ -267,36 +280,20 @@
             .header-img-mobile { display: block; }
             .white-frame { padding: 40px 25px; border-radius: 40px; text-align: center; }
             .white-frame h1 { font-size: 3rem; margin-bottom: 20px; }
-            
-            /* Centering the divider on mobile to match Host page */
             .divider { margin: 0 auto 40px auto; }
-
             .card { border-radius: 40px; padding: 35px; }
             .action-bar { border-radius: 40px; padding: 40px 25px; }
             .footer-title { font-size: 1.8rem; }
             .grid { grid-template-columns: 1fr; gap: 30px; }
             .button-group { flex-direction: column; align-items: center; }
             .footer-btn { width: 100%; max-width: 100%; }
-            .modal-content { margin: 30px auto; padding: 40px 25px; width: calc(100% - 30px); }
+            .modal-content { padding: 40px 25px; width: calc(100% - 30px); }
 
-            /* Mobile Stacking Order: Action -> TOC Links -> Branding */
-            .footer-container { flex-direction: column !important; gap: 60px !important; }
+            /* Mobile Footer Logic */
+            .footer-container { flex-direction: column !important; gap: 70px !important; }
             .footer-action-box { order: 1 !important; justify-content: center; width: 100%; }
-            .action-stack { gap: 0 !important; }
-            .footer-learn-more-text { width: 250px; margin-bottom: -10px !important; }
-            .footer-contact-btn { width: 195px; }
-            .footer-social-row { margin-top: -18px !important; }
-
             .footer-nav-box { order: 2 !important; justify-content: center; width: 100%; }
             .footer-divider-thin { display: none; }
-            .footer-links { 
-                align-items: flex-start; 
-                border-left: 1px solid rgba(255, 255, 255, 0.15); 
-                padding-left: 25px; 
-                width: fit-content; 
-                margin: 0 auto; 
-            }
-
             .footer-brand-box { order: 3 !important; align-items: center; width: 100%; }
         }
     </style>
@@ -311,7 +308,7 @@
 <div class="container">
     <div class="white-frame">
         <h1>Scouting. Redefined.</h1>
-        <p class="contained-subheader">A new standard in film location scouting.</p>
+        <p class="contained-subheader">A new standard in film location scouting</p>
         <div class="divider"></div>
         <p class="info-para">
             We developed this platform to meet the fast-paced demands of today's modern film industry. By providing a solution to the limitations of outdated platforms and traditional scouting, we’ve cleared the path so you can <strong>find your frame</strong>, faster than ever.
@@ -365,17 +362,16 @@
             <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/FSPFWhiteLetters.png?updatedAt=1771441514265" alt="Film Scout Pro" class="footer-logo-img">
             <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/FOOTER-MADEinTORONTO.png" alt="FilmSCOUTpro Made in Toronto-Canada" class="footer-made-in">
         </div>
-
         <div class="footer-nav-box">
             <div class="footer-divider-thin"></div>
             <div class="footer-links">
+                <a href="/" class="footer-link-item">HOME</a>
                 <a href="#" class="footer-link-item">HOSTING</a>
                 <a href="#" class="footer-link-item">SCOUTING</a>
                 <a href="#" class="footer-link-item">TERMS OF USE</a>
                 <a href="#" class="footer-link-item">PRIVACY POLICY</a>
             </div>
         </div>
-
         <div class="footer-action-box">
             <div class="action-stack">
                 <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/Screenshot%202026-02-22%20at%203.27.03%E2%80%AFPM.png" alt="Want To Learn More?" class="footer-learn-more-text">
@@ -383,15 +379,9 @@
                     <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/CONTACT-FOOTER.png" alt="Contact Us Today" class="footer-contact-btn">
                 </a>
                 <div class="footer-social-row">
-                    <a href="https://www.facebook.com/people/Film-Scout-Pro/61584447800895/" target="_blank">
-                        <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/FB-ICON.png" alt="Facebook" class="footer-social-icon">
-                    </a>
-                    <a href="https://www.instagram.com/filmscoutpro/" target="_blank">
-                        <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/INSTA-ICON.png" alt="Instagram" class="footer-social-icon">
-                    </a>
-                    <a href="https://www.linkedin.com/company/filmscoutpro/posts/?feedView=all" target="_blank">
-                        <img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/LINKD-ICON.png" alt="LinkedIn" class="footer-social-icon">
-                    </a>
+                    <a href="https://www.facebook.com/people/Film-Scout-Pro/61584447800895/" target="_blank"><img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/FB-ICON.png" alt="Facebook" class="footer-social-icon"></a>
+                    <a href="https://www.instagram.com/filmscoutpro/" target="_blank"><img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/INSTA-ICON.png" alt="Instagram" class="footer-social-icon"></a>
+                    <a href="https://www.linkedin.com/company/filmscoutpro/posts/?feedView=all" target="_blank"><img src="https://ik.imagekit.io/zmjtdg822h/STEVE'S%20FOLDER/FOOTER%20/LINKD-ICON.png" alt="LinkedIn" class="footer-social-icon"></a>
                 </div>
             </div>
         </div>
@@ -433,7 +423,7 @@
     function openModal(feature) { 
         document.getElementById('modalHeaderContent').innerHTML = modalData[feature].title; 
         document.getElementById('modalBody').innerHTML = modalData[feature].body; 
-        document.getElementById('infoModal').style.display = 'block'; 
+        document.getElementById('infoModal').style.display = 'flex'; /* MATCHES HOST PAGE FLEX LOGIC */
         document.body.style.overflow = 'hidden';
     }
     function closeModal() { 
